@@ -1,0 +1,159 @@
+<!-- <!-- <!DOCTYPE html>
+<html
+  lang="en"
+  th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}"
+>
+  <head>
+    <title style="color:blue">About Page</title>
+  </head>
+  <body>
+    <div id="content">
+      <h1>Welcome to about page</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur,
+        ratione!
+      </p>
+    </div>
+    <script>
+      console.log("about page");
+    </script>
+    <script>
+      console.log("second about page script");
+    </script>
+  </body>
+</html> -->
+
+
+<!-- ppractice -->
+ <!-- <!DOCTYPE html>
+ <html lang="en" th:replace="~{base::parents(~{::#maincontent},~{::title},~{::script})}">
+ <head>
+
+  <title>About page</title>
+ </head>
+ <body>
+  <div id="maincontent" class="mt-20">
+    <h1>this is main content that is written in the about file after fragmentation it is going to the base file but base file is used as a fragmentation in the about file so this content is showing at the about file</h1>
+  </div>
+
+
+<script>console.log("about page")</script>
+ </body>
+ </html>  -->
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="dark" th:replace="~{base :: parents(~{::#aboutcontent},~{::title},~{::script})}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <link rel="stylesheet" th:href="@{/css/output.css}" />
+</head>
+<body class="bg-gradient-to-br from-blue-50 via-white to-blue-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+
+<div id="aboutcontent" class="min-h-screen px-6 py-16 z-10 scroll-pt-24">
+
+  <!-- Hero Section with Gradient Background -->
+  <section class="text-center mb-20 ">
+    <h1 class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mb-4">
+      About Contact Manager
+    </h1>
+    <p class="text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto">
+      The modern solution to effortlessly organize your contacts. Simple, secure, and accessible from anywhere.
+    </p>
+  </section>
+
+  <!-- Glassmorphism Cards Section -->
+  <section class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-20">
+    <div class="bg-white/30 backdrop-blur-md shadow-lg rounded-xl p-8 text-center hover:scale-105 transform transition duration-300">
+      <i class="fas fa-rocket text-4xl text-purple-600 mb-4"></i>
+      <h3 class="text-xl font-semibold mb-2">Fast & Lightweight</h3>
+      <p class="text-gray-700 dark:text-gray-200">Optimized for speed and efficiency. Get instant access to all your contacts.</p>
+    </div>
+    <div class="bg-white/30 backdrop-blur-md shadow-lg rounded-xl p-8 text-center hover:scale-105 transform transition duration-300">
+      <i class="fas fa-shield-alt text-4xl text-blue-600 mb-4"></i>
+      <h3 class="text-xl font-semibold mb-2">Secure & Private</h3>
+      <p class="text-gray-700 dark:text-gray-200">All data is encrypted. Your contacts are safe and confidential.</p>
+    </div>
+    <div class="bg-white/30 backdrop-blur-md shadow-lg rounded-xl p-8 text-center hover:scale-105 transform transition duration-300">
+      <i class="fas fa-mobile-alt text-4xl text-pink-600 mb-4"></i>
+      <h3 class="text-xl font-semibold mb-2">Access Anywhere</h3>
+      <p class="text-gray-700 dark:text-gray-200">Use any device, anytime. Contacts always at your fingertips.</p>
+    </div>
+  </section>
+
+  <!-- Team Section with Overlapping Cards -->
+  <section class="relative mb-20">
+    <h2 class="text-4xl font-bold text-center mb-12">Meet Our Team</h2>
+    <div class="flex flex-wrap justify-center gap-8">
+      <div class="relative w-64 h-80 bg-gradient-to-tr from-purple-400 via-pink-400 to-red-400 rounded-3xl shadow-lg overflow-hidden hover:scale-105 transform transition duration-300">
+        <img src="/images/banner.jpg" alt="Team Member" class="w-32 h-32 rounded-full mx-auto mt-8 border-4 border-white shadow-lg">
+        <div class="text-center mt-4 text-white">
+          <h3 class="font-semibold text-xl">Ankush Kumar</h3>
+          <p class="text-sm mt-1">Founder & CEO</p>
+        </div>
+      </div>
+      <div class="relative w-64 h-80 bg-gradient-to-tr from-blue-400 via-cyan-400 to-green-400 rounded-3xl shadow-lg overflow-hidden hover:scale-105 transform transition duration-300">
+        <img src="images/vikas.png" alt="Team Member" class="w-32 h-32 rounded-full mx-auto mt-8 border-4 border-white shadow-lg">
+        <div class="text-center mt-4 text-white">
+          <h3 class="font-semibold text-xl">Smith</h3>
+          <p class="text-sm mt-1">Lead Designer</p>
+        </div>
+      </div>
+      <div class="relative w-64 h-80 bg-gradient-to-tr from-yellow-400 via-orange-400 to-red-400 rounded-3xl shadow-lg overflow-hidden hover:scale-105 transform transition duration-300">
+        <img src="images/ashok2.png" alt="Team Member"  class="w-32 h-32 rounded-full mx-auto mt-8 border-4 border-white shadow-lg object-cover">
+        <div class="text-center mt-4 text-white">
+          <h3 class="font-semibold text-xl">Ashok Goniya</h3>
+          <p class="text-sm mt-1">Backend Developer</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section with Trendy Gradient Cards -->
+  <section class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-20">
+    <div class="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white rounded-2xl p-8 text-center shadow-lg hover:scale-105 transform transition duration-300">
+      <h3 class="text-4xl font-bold">500+</h3>
+      <p>Active Users</p>
+    </div>
+    <div class="bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400 text-white rounded-2xl p-8 text-center shadow-lg hover:scale-105 transform transition duration-300">
+      <h3 class="text-4xl font-bold">1200+</h3>
+      <p>Contacts Managed</p>
+    </div>
+    <div class="bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 text-white rounded-2xl p-8 text-center shadow-lg hover:scale-105 transform transition duration-300">
+      <h3 class="text-4xl font-bold">99.9%</h3>
+      <p>Uptime Guarantee</p>
+    </div>
+  </section>
+
+  <!-- Call-to-Action Section -->
+  <section class="text-center mb-12">
+    <h2 class="text-3xl font-bold mb-4">Join the Future of Contact Management</h2>
+    <a data-th-href="@{'/register'}" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-full font-semibold hover:opacity-90 transition duration-300">
+      Get Started Now
+    </a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-8 mt-12">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2025 Contact Manager. All rights reserved.</p>
+      <p>Follow us on <a href="https://www.linkedin.com/in/ankush-kumar-2b650a292/" class="text-blue-400">LinkedIn</a> and <a href="https://www.instagram.com/kashvi_gonia992" class="text-blue-400">Instagram</a>.</p>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  console.log("About page loaded");
+</script>
+
+</body>
+</html>

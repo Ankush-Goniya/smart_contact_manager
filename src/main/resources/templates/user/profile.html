@@ -1,0 +1,155 @@
+ <!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile page</title>
+</head>
+<body>
+    <h1>this is user testing profile page</h1>
+    <h1 data-th-text="${LogedInUser.name}"></h1>
+    <h1 data-th-text="${LogedInUser.email}"></h1>
+    if user logged in hai -->
+<!-- <div th:if="${LogedInUser}">
+      <h1>User is logged in</h1>
+      <h1>this is user logged in section</h1>
+      <h1>this is tsting purpose</h1>
+     </div>
+</body>
+</html> --> 
+
+
+ <!-- <!DOCTYPE html>
+<html
+  lang="en"
+  th:replace="~{base :: parents(~{::#content},~{::title},~{::script})}">
+
+  <head>
+    <title data-th-text="${LogedInUser.name}+' |  SCM'">Profile Page</title>
+  </head>
+  <body>
+    <div id="content" class="flex items-center justify-center md:pt-20 flex-col"> 
+     
+      
+     <div data-th-replace="~{user/sidebar::sidebar}"></div> 
+
+       <h1>this is only for testing</h1> 
+        sidebar   -->
+
+       <!-- user is logged in : sidebar  -->
+
+      <!-- <div th:if="${LogedInUser}">
+        <div data-th-replace="~{user/sidebar :: sidebar}"></div>
+      </div>
+
+       <div class="sm:pl-64 pt-20" style="height: 1000px">
+        <div class="flex items-center justify-center md:pt-20 flex-col">  
+      
+           profie card   -->
+            <!-- <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg max-w-2xl w-full"> 
+            <div class="flex flex-col items-center">
+                <img data-th-src="@{${LogedInUser.profilePic}}" src="path/to/profilePic.jpg" alt="Profile Photo" class="w-44 h-44 rounded-full shadow-lg object-cover mb-4">
+                <h2 class="text-2xl font-semibold mb-2" data-th-text=${LogedInUser.name}>User Name</h2>
+                <p class="text-gray-600 mb-2" data-th-text="${LogedInUser.email}">user.email@example.com</p>
+                <p class="text-gray-600 mb-2" data-th-text="${LogedInUser.phoneNumber}">123-456-7890</p>
+                <p class="text-gray-600 mb-4 text-center" data-th-text="${LogedInUser.about}">About the user...</p>
+                <div class="w-full flex justify-between">
+                    <p class="text-sm text-gray-500">Email Verified: <span class="font-medium text-gray-700" id="email-verified" data-th-text="${LogedInUser.emailVerified ? 'YES':'NO'}">No</span></p>
+                    <p class="text-sm text-gray-500">Phone Verified: <span class="font-medium text-gray-700" id="phone-verified" data-th-text="${LogedInUser.phoneVerified ? 'YES':'NO'}">No</span></p> 
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      console.log("this is profile page");
+    </script>
+  </body> 
+</html>  --> 
+
+ <!-- <!DOCTYPE html>
+<html 
+lang="en"
+th:replace="~{base::parents(~{::#content},~{::title},~{::script})}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-th-text="${LogedInUser.name}+'| Profile'">Profile page</title>
+</head>
+<body>
+  <div id="content">
+
+   <div th:if="${LogedInUser}">
+        <div data-th-replace="~{user/sidebar :: sidebar}"></div>
+      </div>
+
+  <div style="height: 1000px" class="sm:pl-66 pt-20" >
+<div class="flex justify-center flex-col items-center">
+<h1 class="text-4xl"> Welcome to Profile page</h1>
+
+
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea temporibus officiis cumque qui, tenetur, sunt earum suscipit blanditiis ratione commodi error? Doloribus perferendis architecto quaerat quam excepturi nulla? Qui, vero!</p>
+  </div>
+</div>
+</div>
+  <script>
+    console.log("this is profile scripts");
+  </script>
+</body>
+</html> -->
+
+
+
+ <!DOCTYPE html>
+<html
+  lang="en"
+  th:replace="~{base :: parents(~{::#content},~{::title},~{::script})}"
+>
+  <head>
+    <title data-th-text="${LogedInUser.name}+' |  SCM'">Profile Page</title>
+  </head>
+  <body>
+    <div id="content"> 
+      <!-- sidebar -->
+
+      <!-- user is logged in : sidebar -->
+
+       <div th:if="${LogedInUser}">
+        <div data-th-replace="~{user/sidebar :: sidebar}"></div>
+      </div>
+
+      <div class="sm:pl-64 pt-20" style="height: 1000px">
+        <div class="flex items-center justify-center md:pt-32 flex-col"> 
+          <!--  profie card -->
+           <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg max-w-2xl w-full">
+            <div class="flex flex-col items-center">
+                <img data-th-src="@{${LogedInUser.profilePic}}" src="path/to/profilePic.jpg" alt="Profile Photo" class="w-44 h-44 rounded-full shadow-lg object-cover mb-4">
+                <h2 class="text-2xl font-semibold mb-2 dark:text-white" data-th-text=${LogedInUser.name}>User Name</h2>
+                <p class="text-gray-600 mb-2" data-th-text="${LogedInUser.email}">user.email@example.com</p>
+                <p class="text-gray-600 mb-2" data-th-text="${LogedInUser.phoneNumber}">123-456-7890</p>
+                <p class="text-gray-600 mb-4 text-center" data-th-text="${LogedInUser.about}">About the user...</p>
+                <div class="w-full flex justify-between">
+                    <p class="text-sm text-gray-500">Email Verified: <span class="font-medium text-gray-700" id="email-verified" data-th-text="${LogedInUser.emailVerified ? 'YES':'NO'}">No</span></p>
+                    <p class="text-sm text-gray-500">Phone Verified: <span class="font-medium text-gray-700" id="phone-verified" data-th-text="${LogedInUser.phoneVerified ? 'YES':'NO'}">No</span></p>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      console.log("this is profile page");
+    </script>
+  </body>
+</html> 
+
+
+
+
+
+<!-- final code -->
+
+
+
+ 

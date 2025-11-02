@@ -1,0 +1,182 @@
+<!-- <!-- <!DOCTYPE html>
+<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title},~{})}">
+  <head>
+  
+    <title>
+      Services
+    </title>
+  </head>
+  <body>
+    <section id="content">
+      <h1>Welcome to services page</h1>
+      <h2>Services offered by SCM</h2>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas dolore assumenda rerum harum mollitia incidunt nesciunt dignissimos esse dicta reprehenderit quam, quisquam aspernatur enim consequatur accusamus, minima alias odit ducimus.<10></10>
+    </section>
+
+  </body>
+</html> -->
+
+
+<!-- for practice -->
+ <!-- <!DOCTYPE html>
+ <html lang="en" th:replace="~{base::parents(~{::#service},~{::title},~{::script})}">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>service</title>
+ </head>
+ <body >
+  <section id="service" class="mt-20">
+<h1>this is service class</h1>
+  </section>
+  <script>console.log("this is service script")</script>
+ </body>
+ </html> --> 
+
+
+
+ <!DOCTYPE html>
+<html
+  lang="en"
+  th:replace="~{base::parents(~{::#service},~{::title},~{::script})}"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services | Smart Contact Manager</title>
+  </head>
+
+  <body>
+    <section id="service" class="mt-20">
+
+      <!-- Hero Section bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 -->
+      <div
+        class=" text-shadow-gray-800 text-center py-20 bg-gray-100"
+      >
+        <h1 class="text-5xl  mb-4 ">Smart Contact Manager Services</h1>
+        <p class="text-lg opacity-90 max-w-2xl mx-auto">
+          Simplify your communication, organize your network, and connect smarter with
+          AI-powered tools — all in one secure platform.
+        </p>
+      </div>
+
+      <!-- Core Services Grid -->
+      <div class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+          <h2 class="text-3xl font-bold text-gray-800 mb-12">What We Offer</h2>
+
+          <div class="grid md:grid-cols-3 gap-10">
+            <!-- Card 1 -->
+            <div
+              class="p-6 bg-white shadow-md rounded-2xl hover:shadow-xl transition"
+            >
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/942/942748.png"
+                alt="Contact Management"
+                class="mx-auto w-16 mb-4"
+              />
+              <h3 class="text-xl font-semibold mb-2 text-indigo-700">
+                Smart Contact Storage
+              </h3>
+              <p class="text-gray-600">
+                Store, organize, and tag all your contacts with fast search and
+                cloud-based access.
+              </p>
+            </div>
+
+            <!-- Card 2 -->
+            <div
+              class="p-6 bg-white shadow-md rounded-2xl hover:shadow-xl transition"
+            >
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png"
+                alt="Cloud Sync"
+                class="mx-auto w-16 mb-4"
+              />
+              <h3 class="text-xl font-semibold mb-2 text-indigo-700">
+                Cloud Sync & Backup
+              </h3>
+              <p class="text-gray-600">
+                Access your contacts anywhere. Data stays synced across all
+                devices in real time.
+              </p>
+            </div>
+
+            <!-- Card 3 -->
+            <div
+              class="p-6 bg-white shadow-md rounded-2xl hover:shadow-xl transition"
+            >
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/888/888879.png"
+                alt="Analytics"
+                class="mx-auto w-16 mb-4"
+              />
+              <h3 class="text-xl font-semibold mb-2 text-indigo-700">
+                Insights & Analytics
+              </h3>
+              <p class="text-gray-600">
+                Get intelligent insights into your communication frequency and
+                engagement patterns.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI Features -->
+      <div class="bg-white py-16">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+          <h2 class="text-3xl font-bold text-gray-800 mb-10">
+            Powered by Smart AI
+          </h2>
+          <div class="grid md:grid-cols-2 gap-10">
+            <div
+              class="p-6 bg-gray-100 rounded-2xl hover:bg-gray-200 transition"
+            >
+              <h3 class="text-xl font-semibold mb-2 text-indigo-700">
+                Duplicate Detection
+              </h3>
+              <p class="text-gray-700">
+                Detect and merge duplicate contacts automatically with
+                machine-learning accuracy.
+              </p>
+            </div>
+
+            <div
+              class="p-6 bg-gray-100 rounded-2xl hover:bg-gray-200 transition"
+            >
+              <h3 class="text-xl font-semibold mb-2 text-indigo-700">
+                Sentiment Analysis
+              </h3>
+              <p class="text-gray-700">
+                Track the tone of your communication to build stronger
+                relationships and smarter follow-ups.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Section -->
+      <div class="bg-indigo-700 text-white text-center py-16">
+        <h2 class="text-2xl font-semibold mb-4">
+          Start Managing Smarter Today 🚀
+        </h2>
+        <p class="opacity-90 mb-6">
+          Join thousands of professionals already using Smart Contact Manager.
+        </p>
+        <a
+          data-th-href="@{'/login'}"
+          class="bg-white text-indigo-700 font-semibold px-6 py-3 rounded-full shadow-md hover:bg-gray-200 transition"
+        >
+          Get Started
+        </a>
+      </div>
+    </section>
+
+    <script>
+      console.log("✅ Services page loaded successfully!");
+    </script>
+  </body>
+</html>
+

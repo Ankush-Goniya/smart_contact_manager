@@ -1,0 +1,239 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard page</title>
+</head>
+<body>
+    <h1>This is user Dashboard page</h1>
+    <h2>this is second line</h2>
+    <a data-th-href="@{'/logout'}">Logout</a>
+</body>
+</html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html 
+lang="en"
+th:replace="~{base::parents(~{::#content},~{::title},~{::script})}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-th-text="${LogedInUser.name}+'| Dashboard'">Dashboard page</title>
+</head>
+<body>
+  <div id="content">
+
+   <div th:if="${LogedInUser}">
+        <div data-th-replace="~{user/sidebar :: sidebar}"></div>
+      </div> -->
+<!-- 
+  <div style="height: 1000px" class="pl-66 pt-20" >
+<div class="flex justify-center flex-col items-center">
+<h1 class="text-4xl"> Welcome to Dashboard page</h1>
+
+
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea temporibus officiis cumque qui, tenetur, sunt earum suscipit blanditiis ratione commodi error? Doloribus perferendis architecto quaerat quam excepturi nulla? Qui, vero!</p>
+  </div>
+</div>
+</div>
+  <script>
+    console.log("this is dashboard scripts");
+  </script>
+</body>
+</html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html 
+lang="en"
+th:replace="~{base::parents(~{::#content},~{::title},~{::script})}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-th-text="${LogedInUser.name}+'| Dashboard'">Dashboard page</title>
+</head>
+<body>
+  <div id="content">
+
+   <div th:if="${LogedInUser}">
+        <div data-th-replace="~{user/sidebar :: sidebar}"></div>
+      </div>
+
+  <div style="height: 1000px" class="sm:pl-66 pt-20" >
+<div class="flex justify-center flex-col items-center">
+<h1 class="text-4xl"> Welcome to Dashboard page</h1>
+
+
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea temporibus officiis cumque qui, tenetur, sunt earum suscipit blanditiis ratione commodi error? Doloribus perferendis architecto quaerat quam excepturi nulla? Qui, vero!</p>
+  </div>
+</div>
+</div>
+  <script>
+    console.log("this is Dashboard scripts");
+  </script>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html
+  lang="en"
+  th:replace="~{base::parents(~{::#content},~{::title},~{::script})}"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-th-text="${LogedInUser.name} + ' | Dashboard'">
+      Dashboard
+    </title>
+
+    <!-- Flowbite CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind Output CSS -->
+    <link rel="stylesheet" th:href="@{/css/output.css}" />
+  </head>
+
+  <body class="dark:bg-gray-900 dark:text-white">
+    <div id="content" class="min-h-screen sm:pl-64 pt-20">
+      <!-- Sidebar Include -->
+      <div th:if="${LogedInUser}">
+        <div data-th-replace="~{user/sidebar :: sidebar}"></div>
+      </div>
+
+      <!-- Dashboard Content -->
+      <div class="container mx-auto px-4 mt-10">
+        <!-- Welcome Banner  bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-2xl p-8 text-center shadow-lg mb-10-->
+        <div
+          class="max-w-3xl w-full mx-auto bg-gradient-to-r from-green-300 to-green-100 dark:from-gray-100 dark:to-gray-300 dark:text-gray-900 rounded-2xl p-8 text-center shadow-xl transform hover:scale-105 transition-transform duration-300 mb-10 bg-blue-500 dark:bg-gray-800"
+
+        >
+          <h1
+            class="text-4xl font-bold mb-2 dark:text-white text-white"
+            th:text="'Welcome, ' + ${LogedInUser.name} + '!'"
+          >
+            Welcome, User!
+          </h1>
+          <p class="text-lg opacity-90 dark:text-white">
+            Manage your contacts, check insights, and stay connected easily.
+          </p>
+        </div>
+
+        <!-- Dashboard Cards -->
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mb-10">
+          <!-- Total Contacts -->
+          <div
+            class="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-6 hover:shadow-xl transition transform hover:-translate-y-1"
+          >
+            <div class="flex items-center justify-between">
+              <h2 class="text-lg font-semibold text-gray-700 dark:text-gray-200">
+                Total Contacts
+              </h2>
+              <i class="fas fa-address-book text-blue-500 text-3xl"></i>
+            </div>
+            <p
+              class="text-4xl font-bold mt-4 text-blue-600"
+              th:text="${totalContacts}"
+            >
+              120
+            </p>
+          </div>
+
+          <!-- Messages Received -->
+          <div
+            class="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-6 hover:shadow-xl transition transform hover:-translate-y-1"
+          >
+            <div class="flex items-center justify-between">
+              <h2 class="text-lg font-semibold text-gray-700 dark:text-gray-200">
+                Messages
+              </h2>
+              <i class="fas fa-envelope text-green-500 text-3xl"></i>
+            </div>
+            <p
+              class="text-4xl font-bold mt-4 text-green-600"
+              th:text="${totalMessages}"
+            >
+              35
+            </p>
+          </div>
+
+          <!-- Profile Views -->
+          <div
+            class="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-6 hover:shadow-xl transition transform hover:-translate-y-1"
+          >
+            <div class="flex items-center justify-between">
+              <h2 class="text-lg font-semibold text-gray-700 dark:text-gray-200">
+                Profile Views
+              </h2>
+              <i class="fas fa-eye text-purple-500 text-3xl"></i>
+            </div>
+            <p class="text-4xl font-bold mt-4 text-purple-600">450</p>
+          </div>
+        </div>
+
+        <!-- Quick Actions Section -->
+        <div
+          class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 text-center"
+        >
+          <h2 class="text-2xl font-bold mb-6 text-gray-700 dark:text-gray-200">
+            Quick Actions
+          </h2>
+          <div
+            class="flex flex-wrap justify-center gap-6 sm:gap-10 text-center"
+          >
+            <a
+              data-th-href="@{'/user/contacts/add'}"
+              class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-full transition duration-300 shadow-md"
+            >
+              + Add Contact
+            </a>
+
+            <a
+              data-th-href="@{'/user/contacts'}"
+              class="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-full transition duration-300 shadow-md"
+            >
+              View Contacts
+            </a>
+
+            <!-- <a
+              data-th-href="@{'/contact/all'}"
+              class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-3 rounded-full transition duration-300 shadow-md"
+            >
+              View Messages
+            </a> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer
+        class="text-center py-6 text-gray-500 dark:text-gray-400 text-sm mt-10"
+      >
+        © 2025 Smart Contact Manager | Designed by
+        <a
+          href="https://www.linkedin.com/in/ankush-kumar-2b650a292/"
+          class="text-blue-500 hover:underline"
+          >Ankush Kumar</a
+        >
+      </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script
+      src="https://kit.fontawesome.com/a81368914c.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <script>
+      console.log("Dashboard page loaded successfully!");
+    </script>
+  </body>
+</html>
