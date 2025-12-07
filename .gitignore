@@ -46,3 +46,5 @@ Thumbs.db
 ### Build Tools ###
 # (keep mvnw and mvnw.cmd — do not ignore)
 .mvn/wrapper/maven-wrapper.jar
+node_modules/
+
